@@ -21,7 +21,7 @@ const CarouselSlider = () => {
           },
         },
         {
-          image: 'https://images.jdmagicbox.com/quickquotes/images_main/solar-water-heating-system-2021436845-dm5iqeds.jpg',
+          image: 'assets/project_1.jpeg',
           content: {
             title: 'Hey Sunshine! Now Say Good bye to Electricity Bills',
             buttonText: 'Contact Us',

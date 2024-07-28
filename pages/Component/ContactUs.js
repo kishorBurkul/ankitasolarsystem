@@ -48,6 +48,7 @@ const ContactUs = () => {
   return (
     <>
       <Box
+      mt={14}
         sx={{
           background: 'url("assets/project_1.jpeg") no-repeat center center',
           backgroundSize: 'cover',
@@ -55,11 +56,12 @@ const ContactUs = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 4
+          padding: 4,
+          
         }}
       >
         <Box sx={{ width: '100%', maxWidth: 1200 }}>
-          <Typography align="center" variant="h4" gutterBottom mt={4}>
+          <Typography align="center" color="white" variant="h4" gutterBottom mt={4}>
             <strong>Get In Touch</strong>
           </Typography>
           <Grid container spacing={2} justifyContent="center" alignItems="center">
@@ -82,22 +84,22 @@ const ContactUs = () => {
                   <span>Vadgaon Bk</span>, Pune
                 </Typography>
                 <Box mb={2} display="flex" alignItems="center">
-                  <LocationOnIcon sx={{ color: '#d44638' }} />
-                  <Typography>
+                  <LocationOnIcon sx={{ color: 'orange' }} />
+                  <Typography sx={{ml:"10px"}}>
                     <strong>Office Address:</strong>-
                     Shop No.1 FL S No.42 HISS No. Sinhgad Road , Venutai Chavan College Road Vadgaon Budruk, Pune , 
                     Maharashtra 411041 
                   </Typography>
                 </Box>
                 <Box mb={2} display="flex" alignItems="center">
-                  <EmailIcon sx={{ color: '#d44638' }} />
-                  <Typography>
+                  <EmailIcon  />
+                  <Typography sx={{ml:"10px"}}>
                     <strong>Email:</strong> anitasolar.mh@gmail.com
                   </Typography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                  <PhoneIcon sx={{ color: '#d44638' }} />
-                  <Typography>
+                  <PhoneIcon sx={{ color: 'blue' }}/>
+                  <Typography sx={{ml:"10px"}}>
                     <strong>Mobile:</strong> +91 9623612594 / 8668844972
                   </Typography>
                 </Box>

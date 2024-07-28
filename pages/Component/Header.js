@@ -43,17 +43,17 @@ const Header = () => {
   const menuItems = [
     { text: 'Home', href: '/' },
     { text: 'About', href: '/about' },
-    { text: 'Contact', href: '/contact' },
+    { text: 'Contact', href: '/contactus' },
   ];
 
   const servicesItems = [
     { text: 'Solar Water Heater', href: '/solarwater' },
-    { text: ' Solar Photovoltaic Power', href: '/electricalwater' },
+    { text: ' Solar Photovoltaic Power', href: '/solarelectricalpower' },
   ];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
+      <AppBar position="fixed" sx={{ backgroundColor: 'white', color: 'black' }}>
         <Toolbar style={{ backgroundColor: 'rgba(0, 14, 79, 0.88)', color: 'white', minHeight: '50px' }}>
           <Box display='flex' justifyContent='center' alignItems='center' width='100%' gap={2}>
             {!isMobile ? (

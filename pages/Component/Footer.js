@@ -17,12 +17,12 @@ const footerStyle = {
 const whatappStyle = {
     position: 'fixed',
     bottom: '20px',
-    left: '20px',
+    left: '10px',
 }
 const callStyle = {
     position: 'fixed',
     bottom: '100px',
-    left: '20px',
+    left: '10px',
 }
 const iconStyle = {
     fontSize: '36px',
@@ -158,7 +158,7 @@ const Footer = () => {
                         <Box style={footerStyle} onClick={scrollToTop}>
                             <Fab
                                 title="Scroll to Top"
-                                color="primary"
+                                color="warning"
                                 sx={{ width: "40px ", height: "40px" }}
                                 aria-label="scroll-to-top"
                             >
