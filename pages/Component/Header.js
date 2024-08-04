@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -24,6 +25,7 @@ const Header = () => {
   const [servicesAnchorEl, setServicesAnchorEl] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const router = useRouter();
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -42,7 +44,7 @@ const Header = () => {
 
   const menuItems = [
     { text: 'Home', href: '/' },
-    { text: 'About', href: '/about' },
+    { text: 'About', href: '/aboutus' },
     { text: 'Contact', href: '/contactus' },
   ];
 
@@ -50,6 +52,8 @@ const Header = () => {
     { text: 'Solar Water Heater', href: '/solarwater' },
     { text: ' Solar Photovoltaic Power', href: '/solarelectricalpower' },
   ];
+
+  const isActive = (href) => router.pathname === href;
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -64,7 +68,7 @@ const Header = () => {
                 </Box>
                 <Box display='flex' alignItems='center' gap={1}>
                   <CallIcon />
-                  <Typography>+91 9623612594 / 8668844972</Typography>
+                  <Typography>+91 9623612594 / +91 7558245454</Typography>
                 </Box>
               </>
             ) : (
@@ -72,7 +76,6 @@ const Header = () => {
                 <Box display='flex' alignItems='center' gap={1}>
                   <EmailOutlined /> 
                   <Typography variant='caption'>anitasolar.mh@gmail.com</Typography>
-                  
                 </Box>
                 <Box display='flex' alignItems='center' gap={1}>
                   <CallIcon />
@@ -97,20 +100,26 @@ const Header = () => {
           <Grid container justifyContent="center" alignItems="center">
             <Grid item lg={6} container justifyContent="center" alignItems="center">
               <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "rgba(0, 14, 79, 0.88)" }}>
-                <b>Ankita Solar System</b>
+                <b>Anita Solar System</b>
               </Typography>
             </Grid>
             <Grid item lg={6} container justifyContent="center" alignItems="center">
               {!isMobile && (
                 <Box sx={{ display: 'flex' }}>
                   {menuItems.map((item, index) => (
-                    <Button color="inherit" href={item.href} key={index}>
+                    <Button
+                      color="inherit"
+                      href={item.href}
+                      key={index}
+                      sx={{ fontWeight: isActive(item.href) ? 'bold' : 'normal', color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit' }}
+                    >
                       <strong>{item.text}</strong>
                     </Button>
                   ))}
                   <Button
                     color="inherit"
                     onClick={handleServicesMenuOpen}
+                    sx={{ fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal', color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'rgba(0, 14, 79, 0.88)' : 'inherit' }}
                   >
                     <strong> Our Services</strong>
                   </Button>
@@ -125,7 +134,9 @@ const Header = () => {
                         ":hover":{
                           color:"white",
                           backgroundColor: 'rgba(0, 14, 79, 0.7)',
-                        }
+                        },
+                        fontWeight: isActive(item.href) ? 'bold' : 'normal',
+                        color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
                       }}
                       >
                         {item.text}
@@ -158,18 +169,33 @@ const Header = () => {
           <List>
             {menuItems.map((item, index) => (
               <React.Fragment key={index}>
-                <ListItem button component="a" href={item.href}>
+                <ListItem button component="a" href={item.href}
+                  sx={{
+                    fontWeight: isActive(item.href) ? 'bold' : 'normal',
+                    color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
+                  }}
+                >
                   <ListItemText primary={item.text} />
                 </ListItem>
                 {index < menuItems.length - 1 && <Divider />}
               </React.Fragment>
             ))}
-            <ListItem button onClick={handleServicesMenuOpen}>
+            <ListItem button onClick={handleServicesMenuOpen}
+              sx={{
+                fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal',
+                color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
+              }}
+            >
               <ListItemText primary="Services" />
             </ListItem>
             <List component="div" disablePadding>
               {servicesItems.map((item, index) => (
-                <ListItem button component="a" href={item.href} key={index} sx={{ pl: 4 }}>
+                <ListItem button component="a" href={item.href} key={index} sx={{ pl: 4 }}
+                  style={{
+                    fontWeight: isActive(item.href) ? 'bold' : 'normal',
+                    color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
+                  }}
+                >
                   <ListItemText primary={item.text} />
                 </ListItem>
               ))}

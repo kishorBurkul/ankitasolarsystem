@@ -39,7 +39,16 @@ const SolarWater = () => {
                             backgroundColor: 'rgba(0, 0, 0, 0.5)'
                         }}
                     >
-                        <Typography variant="h3" component="h1" fontWeight="bold">
+                        <Typography variant="h3" component="h1" fontWeight="bold"
+                      sx={{
+                        fontSize: {
+                          xs: '25px',  
+                          sm: '30px', 
+                          md: '35px', 
+                          lg: '40px', 
+                        }
+                      }}
+                        >
                             Solar Water Heater
                         </Typography>
                     </Box>
@@ -49,7 +58,7 @@ const SolarWater = () => {
                 <Grid container spacing={3} sx={{ marginTop: { xs: 2, sm: 2 } }}>
                     {/* Left Content */}
                     <Grid item xs={12} sm={6} lg={6} sx={{ order: { xs: 1, sm: 1, md: 1 } }}>
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h5" gutterBottom>
                             What Is a Solar Water Heater System?
                         </Typography>
                         <Typography variant="body1" paragraph>
@@ -85,6 +94,7 @@ const SolarWater = () => {
                                     md: 'auto',
                                     lg: 'auto'
                                 },
+                                borderRadius: "40px 0px 40px 0px",
                                 marginBottom: { xs: 4, sm: 8 },
                                 objectFit: 'cover'
                             }}
@@ -106,6 +116,7 @@ const SolarWater = () => {
                                     md: 'auto',
                                     lg: '350px'
                                 },
+                                borderRadius: "0px 40px 0px 40px",
                                 marginBottom: { xs: 4, sm: 8 },
                                 objectFit: 'cover'
                             }}
@@ -113,7 +124,7 @@ const SolarWater = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={6} lg={6} sx={{ order: { xs: 1, sm: 1, md: 2 } }}>
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h5" gutterBottom>
                             Benefits of Solar Water Heater Systems:
                         </Typography>
                         <Typography variant="body1" paragraph>

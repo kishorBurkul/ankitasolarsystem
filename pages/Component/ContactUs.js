@@ -21,7 +21,9 @@ const ContactUs = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxUr-6hesAv7K9HF32VdUwej6cnLteRfco4sP5lNzovhDMKroP1QAYw2iHTOTYGkrDOWA/exec",
+        // https://script.google.com/macros/s/AKfycbxDe5wRGc9J_XzuKyvBHvTVTm2P0XaU0cj0zKSDw6dKtgsVM1eun9IXDW--jrilreix4A/exec
+        //https://script.google.com/macros/s/AKfycbwG3IWCG9FeW1wDY_tPGTXCFzA50pvv_y5xcHTZqGinHJ24emjwO283FOVqeNN1gRlC4Q/exec
+        "https://script.google.com/macros/s/AKfycbx4kIl31cerRZWI4qDti7qZn4KCwM7-FC0jA5tNQoNeUjcXd0kOJStxVzowSrW3RJAfMA/exec",
         {
           method: 'POST',
           mode: 'no-cors',
@@ -48,8 +50,9 @@ const ContactUs = () => {
   return (
     <>
       <Box
-      mt={14}
+        mt={14}
         sx={{
+          position: 'relative',
           background: 'url("assets/project_1.jpeg") no-repeat center center',
           backgroundSize: 'cover',
           minHeight: { xs: "60vh", md: "40vh", sm: "40vh", lg: "40vh", xl: "40vh" },
@@ -57,11 +60,28 @@ const ContactUs = () => {
           justifyContent: 'center',
           alignItems: 'center',
           padding: 4,
-          
         }}
       >
-        <Box sx={{ width: '100%', maxWidth: 1200 }}>
-          <Typography align="center" color="white" variant="h4" gutterBottom mt={4}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 1,
+          }}
+        ></Box>
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: 1200,
+            position: 'relative',
+            zIndex: 2,
+          }}
+        >
+          <Typography align="center" variant="h4" color="white" gutterBottom mt={4} >
             <strong>Get In Touch</strong>
           </Typography>
           <Grid container spacing={2} justifyContent="center" alignItems="center">
@@ -73,9 +93,10 @@ const ContactUs = () => {
                   boxShadow: 3,
                   padding: 3,
                   width: '100%',
+                  color:"rgba(0, 14, 79, 0.88)",
                   transition: 'background-color 0.3s, color 0.3s',
                   '&:hover': {
-                    backgroundColor: 'gray',
+                    backgroundColor: 'rgba(0, 0, 0, 0.9)',
                     color: 'white',
                   },
                 }}
@@ -84,23 +105,23 @@ const ContactUs = () => {
                   <span>Vadgaon Bk</span>, Pune
                 </Typography>
                 <Box mb={2} display="flex" alignItems="center">
-                  <LocationOnIcon sx={{ color: 'orange' }} />
-                  <Typography sx={{ml:"10px"}}>
+                  <LocationOnIcon/>
+                  <Typography sx={{ ml: "10px" }}>
                     <strong>Office Address:</strong>-
-                    Shop No.1 FL S No.42 HISS No. Sinhgad Road , Venutai Chavan College Road Vadgaon Budruk, Pune , 
-                    Maharashtra 411041 
+                    Shop No.1 FL S No.42 HISS No. Sinhgad Road , Venutai Chavan College Road Vadgaon Budruk, Pune ,
+                    Maharashtra 411041
                   </Typography>
                 </Box>
                 <Box mb={2} display="flex" alignItems="center">
-                  <EmailIcon  />
-                  <Typography sx={{ml:"10px"}}>
+                  <EmailIcon />
+                  <Typography sx={{ ml: "10px" }}>
                     <strong>Email:</strong> anitasolar.mh@gmail.com
                   </Typography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                  <PhoneIcon sx={{ color: 'blue' }}/>
-                  <Typography sx={{ml:"10px"}}>
-                    <strong>Mobile:</strong> +91 9623612594 / 8668844972
+                  <PhoneIcon />
+                  <Typography sx={{ ml: "10px" }}>
+                    <strong>Mobile:</strong> +91 9623612594 /7558245454
                   </Typography>
                 </Box>
               </Box>
@@ -114,7 +135,7 @@ const ContactUs = () => {
                   {({ handleSubmit }) => (
                     <Form onSubmit={handleSubmit}>
                       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                        <Typography variant="h5" gutterBottom align='center' color="blue">
+                        <Typography variant="h5" gutterBottom align='center'sx={{color:"rgba(0, 14, 79, 0.88)"}}>
                           <strong> Reach Us</strong>
                         </Typography>
                         <Field

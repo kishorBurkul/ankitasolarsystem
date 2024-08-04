@@ -65,7 +65,7 @@ const CarouselSlider = () => {
 
     return (
         <Box sx={{ position: 'relative', width: '100%', 
-      //  mt:{xs:"56px",md:"56px",lg:"56px",sm:"56px"},
+        mt:{xs:"56px",md:"56px",lg:"56px",sm:"56px"},
         }}>
             <Box sx={{ position: 'relative',  overflow: 'hidden'}}>
                 {slides.map((slide, index) => (
@@ -76,7 +76,7 @@ const CarouselSlider = () => {
                             transition: 'opacity 1s ease-in-out',
                         }}
                     >
-                        <SlideImage src={slide.image} alt={`Slide ${index + 1}`} sx={{height:{sx:"250px",md:"450px",lg:"550px"}}} />
+                        <SlideImage src={slide.image} alt={`Slide ${index + 1}`} sx={{height:{xs:"250px",md:"450px",lg:"550px"}}} />
                         <SlideContent>
                             <Typography variant="h6" sx={{fontWeight: 'bold', color:"rgb(253, 91, 3)", fontSize:{xs:"18px" , md:"26px", lg:"36px"} }}>
                               <strong>  {slide.content.title}</strong>

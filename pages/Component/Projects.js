@@ -27,14 +27,14 @@ const sectorsData = [
     value: "Vadgaon",
   },
   {
-    hoverText: "Pimpri",
+    hoverText: "Swargate",
     label: "Swargate",
     url: `assets/project_3.jpeg`,
     value: "Pimpri",
   },
   {
-    hoverText: "Pimpri",
-    label: "Pimpri",
+    hoverText: "Pimpri Chinchwad",
+    label: "Pimpri Chinchwad",
     url: `assets/project_4.jpeg`,
     value: "Pimpri Chinchwad",
   },
@@ -59,19 +59,19 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    if (isSmallScreen || isMdScreen ||isLgScreen) {
+    if (isSmallScreen || isMdScreen || isLgScreen) {
       const autoSlide = setInterval(() => {
         next();
-      }, 3000); 
+      }, 3000);
 
       return () => clearInterval(autoSlide);
     }
-  }, [currentSlide, isSmallScreen,isMdScreen,isLgScreen]);
+  }, [currentSlide, isSmallScreen, isMdScreen, isLgScreen]);
 
   return (
     <Grid container spacing={2} mb={3} justifyContent="center" alignItems="center">
       <Grid item xs={12}>
-        <Typography align="center" variant="h4">
+        <Typography align="center" variant="h4" sx={{ color: "rgba(0, 14, 79, 0.88)" }}>
           <strong>Projects</strong>
         </Typography>
       </Grid>
@@ -83,12 +83,14 @@ const Projects = () => {
               <Tooltip title={sector.hoverText} placement="top">
                 <Card
                   sx={{
-                    // height: { xs: "250px", sm: "200px", md: "200px", lg: "220px" },
                     borderRadius: "20px",
                     textAlign: "center",
                   }}
                 >
                   <CardMedia component="img" height="290" image={sector.url} alt={sector.label} />
+                  <CardContent>
+                    <Typography variant="body1" sx={{color:"rgba(0, 14, 79, 0.88)"}}><strong>{sector.label}</strong></Typography>
+                  </CardContent>
                 </Card>
               </Tooltip>
             </Box>

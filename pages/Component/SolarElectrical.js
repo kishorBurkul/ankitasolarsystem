@@ -39,7 +39,14 @@ const SolarElectrical = () => {
                             backgroundColor: 'rgba(0, 0, 0, 0.5)'
                         }}
                     >
-                        <Typography variant="h3" component="h1" fontWeight="bold">
+                        <Typography variant="h3" component="h1" fontWeight="bold"  sx={{
+                        fontSize: {
+                          xs: '25px',  
+                          sm: '30px', 
+                          md: '35px', 
+                          lg: '40px', 
+                        }
+                      }}>
                             Solar Photovoltaic Power
                         </Typography>
                     </Box>
@@ -74,7 +81,7 @@ const SolarElectrical = () => {
                                     md: 'auto',
                                     lg: '350px'
                                 },
-                                borderRadius: "20px",
+                                borderRadius: "40px 0px 40px 0px",
                                 marginBottom: { xs: 4, sm: 8 },
                                 objectFit: 'cover'
                             }}

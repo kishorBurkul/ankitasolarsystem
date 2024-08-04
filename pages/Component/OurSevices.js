@@ -4,11 +4,11 @@ import { Grid, Card, CardContent, CardMedia, Typography, Button, Box } from '@mu
 const OurServices = () => {
     return (
         <Grid container direction="column" alignItems="center">
-            <Typography align="center" variant="h4" gutterBottom mt={4}>
+            <Typography align="center" variant="h4" gutterBottom mt={4} sx={{color:"rgba(0, 14, 79, 0.88)"}}>
                 <strong>Our Solar Services</strong>
             </Typography>
             <Grid container justifyContent="center" alignItems="center" spacing={2} mb={4}>
-                <Grid item lg={4} md={6} sm={6} xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid item lg={4} md={6} sm={6} xs={12} style={{ display: 'flex', justifyContent: 'center' , }}>
                     <Box sx={{ position: 'relative', maxWidth: 345, margin: 2 }}>
                         <Card
                             sx={{
@@ -105,7 +105,6 @@ const OurServices = () => {
                         </Box>
                     </Box>
                 </Grid>
-                
             </Grid>
         </Grid>
     );

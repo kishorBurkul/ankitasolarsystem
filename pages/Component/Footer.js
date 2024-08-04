@@ -16,13 +16,13 @@ const footerStyle = {
 };
 const whatappStyle = {
     position: 'fixed',
-    bottom: '20px',
-    left: '10px',
+    bottom: '10px',
+    left: '5px',
 }
 const callStyle = {
     position: 'fixed',
-    bottom: '100px',
-    left: '10px',
+    bottom: '70px',
+    left: '5px',
 }
 const iconStyle = {
     fontSize: '36px',
@@ -51,7 +51,7 @@ const Footer = () => {
     };
 
     useEffect(() => {
-        setMounted(true); // Component is now mounted
+        setMounted(true);
 
         const handleScroll = () => {
             const scrollTop = window.pageYOffset;
@@ -79,9 +79,9 @@ const Footer = () => {
                     <Grid item xs={6} sm={3} md={2}>
                         <Box>
                             <List>
-                                <ListItem>About Us</ListItem>
-                                <ListItem>Contact Us</ListItem>
-                                <ListItem>Project</ListItem>
+                                <ListItem button component="a" href="/">Home</ListItem>
+                                <ListItem button component="a" href="/solarwater">Solar Heater</ListItem>
+                                <ListItem button component="a" href="solarelectricalpower">Solar Electricity</ListItem>
                             </List>
                         </Box>
                     </Grid>
@@ -89,9 +89,9 @@ const Footer = () => {
                     <Grid item xs={6} sm={3} md={2}>
                         <Box>
                             <List>
-                                <ListItem>Solar Heater</ListItem>
-                                <ListItem>Solar Electricity</ListItem>
-                                <ListItem>About Us</ListItem>
+                                <ListItem button component="a" href="/">Projects</ListItem>
+                                <ListItem button component="a" href="/contactus">Contact Us</ListItem>
+                                <ListItem button component="a" href="/aboutus">About Us</ListItem>
                             </List>
                         </Box>
                     </Grid>
@@ -103,20 +103,19 @@ const Footer = () => {
                                     <ListItemIcon sx={{ color: "#03a8a0" }}>
                                         <LocationOnIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Address :   Shop No.1 FL S No.42 HISS No. Sinhgad Road , Venutai Chavan College Road Vadgaon Budruk, Pune , 
-                    Maharashtra 411041 " />
+                                    <ListItemText primary="Address: Shop No.1 FL S No.42 HISS No. Sinhgad Road, Venutai Chavan College Road Vadgaon Budruk, Pune, Maharashtra 411041" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon sx={{ color: "#d44638" }}>
                                         <EmailIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Email : anitasolar.mh@gmail.com" />
+                                    <ListItemText primary="Email: anitasolar.mh@gmail.com" />
                                 </ListItem>
                                 <ListItem disablePadding>
                                     <ListItemIcon sx={{ color: "yellow" }}>
                                         <PhoneIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Mobile :  +91 9623612594 / 8668844972" />
+                                    <ListItemText primary="Mobile: +91 9623612594 /+91 7558245454" />
                                 </ListItem>
                             </List>
                         </Box>
@@ -143,8 +142,7 @@ const Footer = () => {
                             </Box>
                             <Box display="flex" justifyContent="center" alignItems="center">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d7569.131324311003!2d73.84837078272841!3d18.45801959340881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bc2eb458c58d0af%3A0x631bdaae3155adae!2sFR5X%2B3MV%20Suman%20Plaza%2C%20Tanaje%20Nagar%2C%20Mohan%20Nagar%2C%20Dhankawadi%2C%20Pune%2C%20Maharashtra%20411046!3m2!1d18.4577307!2d73.84917589999999!5e0!3m2!1sen!2sin!4v1716232403532!5m2!1sen!2sin"
-                                    width="330px"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.5209638331078!2d73.83144944011919!3d18.468459799040712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295003ceafb5b%3A0xabb44a6fd5e1a4ec!2sSidhi%20Apartment%20B!5e0!3m2!1sen!2sin!4v1722793131766!5m2!1sen!2sin" 
                                     height="200px"
                                     allowFullScreen=""
                                     loading="lazy"
@@ -162,45 +160,30 @@ const Footer = () => {
                                 sx={{ width: "40px ", height: "40px" }}
                                 aria-label="scroll-to-top"
                             >
-                               <IconButton>
-                               <KeyboardArrowUpRounded style={iconStyle} />
-                               </IconButton>
-                            </Fab>
-                        </Box>
-                    )}
-                    {mounted && (
-                        <Box style={whatappStyle}>
-                            <Fab
-                                title="Whats App"
-                                color="success"
-                                sx={{ width: "60px ", height: "60px" }}
-                            >
-                                <IconButton
-                                    color="primary"
-                                    sx={{ ...commonFabStyles, backgroundColor: '#25D366', width: '50px', height: '50px', color: 'yellow' }}
-                                    aria-label="WhatsApp"
-                                    onClick={() => window.open('https://wa.me/+919623612594', '_blank')}
-                                >
-                                    <WhatsApp fontSize='20' />
-                                </IconButton >
-                            </Fab>
-                        </Box>
-                    )}
-                    {mounted && (
-                        <Box style={callStyle}>
-                            <Fab
-                                title="Calling"
-                                color="primary"
-                                sx={{ ...commonFabStyles, width: "60px ", height: "60px", backgroundColor: '#0A84FF' }}
-                            >
-                                <IconButton
-                                    sx={{ width: '80px', height: '80px', color: 'blue' }}
-                                    aria-label="Call"
-                                    onClick={() => window.open('tel:+919623612594 ', '_self')}
-                                >
-                                    <Call />
+                                <IconButton>
+                                    <KeyboardArrowUpRounded style={iconStyle} />
                                 </IconButton>
                             </Fab>
+                        </Box>
+                    )}
+                    {mounted && showFab && (
+                        <Box style={whatappStyle}>
+                            <IconButton
+                                aria-label="WhatsApp"
+                                onClick={() => window.open('https://wa.me/+919623612594', '_blank')}
+                            >
+                                <img src='assets/whatsapp.png' style={{ width: "40px", height: "40px" }} />
+                            </IconButton >
+                        </Box>
+                    )}
+                    {mounted && showFab && (
+                        <Box style={callStyle}>
+                            <IconButton
+                                aria-label="Call"
+                                onClick={() => window.open('tel:+919623612594', '_self')}
+                            >
+                                <img src='assets/pause-call.png' style={{ width: "40px", height: "40px" }} />
+                            </IconButton>
                         </Box>
                     )}
                 </Grid>
