@@ -33,26 +33,49 @@ const WhyChooseSolar = () => {
         <Box p={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
             <Grid container spacing={4} justifyContent="center">
                 {reasons.map((reason, index) => (
-                    <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                        <Card
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={index} py={2}>
+                        <Box
                             sx={{
-                                height: '100%',
-                                borderRadius: '15px',
-                                textAlign: 'center',
-                                padding: '20px',
-                                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                                perspective: '1000px',
+                                '&:hover .flipCard': {
+                                    transform: 'rotateY(180deg)',
+                                },
                             }}
                         >
-                            <CardContent>
-                                {reason.icon}
-                                <Typography variant="h6" component="div" sx={{ mt: 2 }}>
-                                    {reason.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                                    {reason.description}
-                                </Typography>
-                            </CardContent>
-                        </Card>
+                            <Card
+                                className="flipCard"
+                                sx={{
+                                    height: '100%',
+                                    borderRadius: '15px',
+                                    textAlign: 'center',
+                                    padding: '20px',
+                                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                                    transition: 'transform 0.6s',
+                                    transformStyle: 'preserve-3d',
+                                    position: 'relative',
+                                    transform: 'rotateY(0)',
+                                }}
+                            >
+                                <CardContent
+                                    sx={{
+                                        backfaceVisibility: 'hidden',
+                                        position: 'relative',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    {reason.icon}
+                                    <Typography variant="h6" component="div" sx={{ mt: 2 }}>
+                                        {reason.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                                        {reason.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Box>
                     </Grid>
                 ))}
             </Grid>

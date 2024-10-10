@@ -69,7 +69,7 @@ const About = () => {
                         >
                             <CardContent>
                                 <Typography variant="h5" gutterBottom>
-                                    Welcome to Anita Solar System
+                                    Welcome to Green Life Power Solution
                                 </Typography>
                                 <Typography variant="body1" paragraph>
                                     We are an authorized distributor of Sudershan Saur, dedicated to providing top-notch solar solutions in Pune. Over the past 7 years, we have successfully completed over 100 projects, specializing in solar heaters and solar electricity.
@@ -78,7 +78,7 @@ const About = () => {
                                     Our team is committed to offering comprehensive services, including installation and free guidance under government solar schemes for electricity and water heaters. We work closely with government initiatives to ensure that our customers receive the best benefits and support for their solar energy needs.
                                 </Typography>
                                 <Typography variant="body1" paragraph>
-                                    At Anita Solar System, we pride ourselves on delivering high-quality products and exceptional service, making us a trusted name in the industry. Join us in our mission to harness the power of the sun and create a sustainable future.
+                                    At Green Life Power Solution, we pride ourselves on delivering high-quality products and exceptional service, making us a trusted name in the industry. Join us in our mission to harness the power of the sun and create a sustainable future.
                                 </Typography>
                             </CardContent>
                         </Card>
@@ -96,7 +96,7 @@ const About = () => {
           >
             <CardContent>
               <Typography variant="h6" gutterBottom>
-                Why Choose Anita Solar System?
+                Why Choose Green Life Power Solution?
               </Typography>
               <Typography variant="body1" component="ul">
                 <li>Authorized distributor of Sudershan Saur</li>

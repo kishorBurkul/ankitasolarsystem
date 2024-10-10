@@ -3,6 +3,7 @@ import ContactUs from "./Component/ContactUs";
 import Footer from "./Component/Footer";
 import Header from "./Component/Header";
 import OurServices from "./Component/OurSevices";
+import OurVision from "./Component/OurVison";
 import Projects from "./Component/Projects";
 import SolarInfoSection from "./Component/SolarInfoSection";
 import SubsudyDetails from "./Component/SubsudyDetails";
@@ -15,6 +16,7 @@ export default function Home() {
      <SubsudyDetails/>
      <Projects/>
      <SolarInfoSection/>
+     <OurVision/>
      <WhyChooseSolar/>
      <ContactUs/>
     </>

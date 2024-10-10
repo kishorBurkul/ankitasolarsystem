@@ -58,7 +58,7 @@ const SolarInfoSection = () => {
         >
           <CardContent>
             <Typography variant="h6" gutterBottom>
-              Why Anita Solar System?
+              Why Green Life Power Solution?
             </Typography>
             <Typography variant="body1" component="ul">
               <li>Sudershan Saur Authorized Distributor</li>
@@ -85,7 +85,7 @@ const SolarInfoSection = () => {
         >
           <CardContent>
             <Typography variant="h6" gutterBottom>
-             <strong> Anita Solar System</strong>
+             <strong> Green Life Power Solution</strong>
             </Typography>
             <Typography variant="h5" gutterBottom color={"rgba(0, 14, 79, 0.88)"}>
               Get A FREE initial Suitability Test

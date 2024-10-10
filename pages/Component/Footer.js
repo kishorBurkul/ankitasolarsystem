@@ -189,7 +189,7 @@ const Footer = () => {
                 </Grid>
             </Grid>
             <Grid style={{ backgroundColor: '#17213C', textAlign: 'center', padding: '20px 0', color: 'white' }}>
-                <Typography variant="body2" color="inherit">Copyright &copy; Anita Solar System & Developed By Kishor Burkul</Typography>
+                <Typography variant="body2" color="inherit">Copyright &copy; Green Life Power Solution & Developed By Kishor Burkul</Typography>
             </Grid>
         </footer>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
+import Link from 'next/link';
 
 const OurServices = () => {
     return (
@@ -37,6 +38,7 @@ const OurServices = () => {
                             </CardContent>
                         </Card>
                         <Box sx={{ position: 'absolute', bottom: -16, left: '50%', transform: 'translateX(-50%)' }}>
+                        <Link href="solarwater" passHref>
                             <Button
                                 variant="outlined"
                                 color="primary"
@@ -54,6 +56,7 @@ const OurServices = () => {
                             >
                                 <strong>Read More</strong>
                             </Button>
+                            </Link>
                         </Box>
                     </Box>
                 </Grid>
@@ -84,7 +87,9 @@ const OurServices = () => {
                                 </Typography>
                             </CardContent>
                         </Card>
+                       
                         <Box sx={{ position: 'absolute', bottom: -16, left: '50%', transform: 'translateX(-50%)' }}>
+                        <Link href="solarelectricalpower" passHref>
                             <Button
                                 variant="outlined"
                                 color="primary"
@@ -102,6 +107,7 @@ const OurServices = () => {
                             >
                                 <strong>Read More</strong>
                             </Button>
+                            </Link>
                         </Box>
                     </Box>
                 </Grid>

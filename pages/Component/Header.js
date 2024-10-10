@@ -99,8 +99,8 @@ const Header = () => {
           )}
           <Grid container justifyContent="center" alignItems="center">
             <Grid item lg={6} container justifyContent="center" alignItems="center">
-              <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "rgba(0, 14, 79, 0.88)" }}>
-                <b>Anita Solar System</b>
+              <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "#72BF78" }}>
+                <b>Green Life Power Solution</b>
               </Typography>
             </Grid>
             <Grid item lg={6} container justifyContent="center" alignItems="center">
@@ -162,7 +162,7 @@ const Header = () => {
         >
           <Box>
             <Typography align='center' variant="h6" sx={{ my: 2 }}>
-              <strong>Ankita Solar System</strong>
+              <strong>Green Life Power Solution</strong>
             </Typography>
           </Box>
           <Divider />
