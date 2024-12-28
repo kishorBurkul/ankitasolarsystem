@@ -143,7 +143,7 @@ const SolarWater = () => {
 
 
 
-                <Grid container spacing={3} sx={{ marginTop: { xs: 2, sm: 2 } ,backgroundColor:"rgba(0,0,0,0.1)" }} mb={1}>
+                <Grid container  sx={{ marginTop: { xs: 2, sm: 2 } ,backgroundColor:"rgba(0,0,0,0.1)" }} mb={1} p={2}>
                     <Grid item xs={12} sm={6} lg={6} sx={{ order: { xs: 2, sm: 2, md: 2 } }}>
                         <Typography variant="h5" gutterBottom>
                             Why Use Solar Water Heaters?

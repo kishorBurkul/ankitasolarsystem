@@ -104,24 +104,25 @@ const ContactUs = () => {
                 <Typography variant="h6" component="h3" mb={2} fontWeight="fontWeightBold">
                   <span>Vadgaon Bk</span>, Pune
                 </Typography>
+                <Box display="flex" alignItems="center" mb={2} >
+                  <PhoneIcon />
+                  <Typography sx={{ ml: "10px" }}>
+                    <strong>Mobile:</strong> +91 9623612594 /7558245454
+                  </Typography>
+                </Box>
+                <Box mb={2} display="flex" alignItems="center">
+                  <EmailIcon />
+                  <Typography sx={{ ml: "10px" }}>
+                    <strong>Email:</strong> greenlifepowersolutionMh@gmail.com
+                  </Typography>
+                </Box>
+               
                 <Box mb={2} display="flex" alignItems="center">
                   <LocationOnIcon/>
                   <Typography sx={{ ml: "10px" }}>
                     <strong>Office Address:</strong>-
                     Shop No.1 FL S No.42 HISS No. Sinhgad Road , Venutai Chavan College Road Vadgaon Budruk, Pune ,
                     Maharashtra 411041
-                  </Typography>
-                </Box>
-                <Box mb={2} display="flex" alignItems="center">
-                  <EmailIcon />
-                  <Typography sx={{ ml: "10px" }}>
-                    <strong>Email:</strong> anitasolar.mh@gmail.com
-                  </Typography>
-                </Box>
-                <Box display="flex" alignItems="center">
-                  <PhoneIcon />
-                  <Typography sx={{ ml: "10px" }}>
-                    <strong>Mobile:</strong> +91 9623612594 /7558245454
                   </Typography>
                 </Box>
               </Box>
@@ -152,7 +153,7 @@ const ContactUs = () => {
                           label="Email"
                           type="email"
                           variant="outlined"
-                          required
+                         
                         />
                         <Field
                           name="mobile"

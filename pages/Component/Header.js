@@ -19,6 +19,10 @@ import CallIcon from '@mui/icons-material/Call';
 import Grid from '@mui/material/Grid';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Link from 'next/link'; // Import the Link component from Next.js
+import { Collapse } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -26,6 +30,9 @@ const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const router = useRouter();
+  const [openServices, setOpenServices] = useState(false);
+
+  // Toggle the dropdown visibility
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -33,7 +40,10 @@ const Header = () => {
     }
     setDrawerOpen(open);
   };
-
+  const handleServicesClick = () => {
+    setOpenServices(!openServices);
+    toggleDrawer(true)
+  }
   const handleServicesMenuOpen = (event) => {
     setServicesAnchorEl(event.currentTarget);
   };
@@ -51,6 +61,7 @@ const Header = () => {
   const servicesItems = [
     { text: 'Solar Water Heater', href: '/solarwater' },
     { text: ' Solar Photovoltaic Power', href: '/solarelectricalpower' },
+    { text: 'Project Gallery', href: '/projectgallery' },
   ];
 
   const isActive = (href) => router.pathname === href;
@@ -64,7 +75,7 @@ const Header = () => {
               <>
                 <Box display='flex' alignItems='center' gap={1}>
                   <EmailOutlined />
-                  <Typography>anitasolar.mh@gmail.com</Typography>
+                  <Typography>greenlifepowersolutionMh@gmail.com</Typography>
                 </Box>
                 <Box display='flex' alignItems='center' gap={1}>
                   <CallIcon />
@@ -73,14 +84,12 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Box display='flex' alignItems='center' gap={1}>
-                  <EmailOutlined /> 
-                  <Typography variant='caption'>anitasolar.mh@gmail.com</Typography>
-                </Box>
-                <Box display='flex' alignItems='center' gap={1}>
-                  <CallIcon />
+                <Grid display='flex' alignItems='center' justifyContent={'space-between'} gap={1}>
+                  <EmailOutlined fontSize='24px' />
+                  <Typography variant='caption'>greenlifepowersolutionMh@gmail.com</Typography>
+                  <CallIcon  fontSize='24px'/>
                   <Typography variant='caption'>+9623612594 </Typography>
-                </Box>
+              </Grid>
               </>
             )}
           </Box>
@@ -91,35 +100,43 @@ const Header = () => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{mr: 2}}
               onClick={toggleDrawer(true)}
             >
               <MenuIcon />
             </IconButton>
           )}
           <Grid container justifyContent="center" alignItems="center">
-            <Grid item lg={6} container justifyContent="center" alignItems="center">
-              <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "#72BF78" }}>
-                <b>Green Life Power Solution</b>
-              </Typography>
+            <Grid item lg={6} md={6} sm={6}  justifyContent="center" alignItems="center">
+              {/* <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "#72BF78" }}>
+               <Link href="/" passHref style={{ textDecoration: 'none' ,color: "#72BF78"}}> <b>Green Life Power Solution</b></Link>
+              </Typography> */}
+              <Box display={"flex"} alignItems="center">
+              <Link href="/" passHref style={{ textDecoration: 'none', color: "#72BF78" }}>   <img src='assets/grenlifelogo2.png' ></img></Link>
+              {/* {
+                !isMobile && <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "#72BF78" }}>
+                  <Link href="/" passHref style={{ textDecoration: 'none', color: "#72BF78" }}> <b>Green Life Power Solution</b></Link>
+                </Typography>
+              } */}
+            </Box>
             </Grid>
-            <Grid item lg={6} container justifyContent="center" alignItems="center">
+            <Grid item lg={6}  md={6} sm={6}  container justifyContent="center" alignItems="center">
               {!isMobile && (
                 <Box sx={{ display: 'flex' }}>
                   {menuItems.map((item, index) => (
-                    <Button
-                      color="inherit"
-                      href={item.href}
-                      key={index}
-                      sx={{ fontWeight: isActive(item.href) ? 'bold' : 'normal', color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit' }}
-                    >
-                      <strong>{item.text}</strong>
-                    </Button>
+                    <Link href={item.href} passHref key={index}>
+                      <Button
+                        color="inherit"
+                        sx={{ fontWeight: isActive(item.href) ? 'bold' : 'normal', color: isActive(item.href) ? 'inherit' : 'rgba(0, 14, 79, 0.88)' }}
+                      >
+                        <strong>{item.text}</strong>
+                      </Button>
+                    </Link>
                   ))}
                   <Button
                     color="inherit"
                     onClick={handleServicesMenuOpen}
-                    sx={{ fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal', color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'rgba(0, 14, 79, 0.88)' : 'inherit' }}
+                    sx={{ fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal', color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'inherit' : 'rgba(0, 14, 79, 0.88)' }}
                   >
                     <strong> Our Services</strong>
                   </Button>
@@ -129,18 +146,22 @@ const Header = () => {
                     onClose={handleServicesMenuClose}
                   >
                     {servicesItems.map((item, index) => (
-                      <MenuItem component="a" href={item.href} key={index} onClick={handleServicesMenuClose}
-                      sx={{
-                        ":hover":{
-                          color:"white",
-                          backgroundColor: 'rgba(0, 14, 79, 0.7)',
-                        },
-                        fontWeight: isActive(item.href) ? 'bold' : 'normal',
-                        color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
-                      }}
-                      >
-                        {item.text}
-                      </MenuItem>
+                      <Link href={item.href} passHref key={index} style={{ textDecoration: "none", }}>
+                        <MenuItem
+                          onClick={handleServicesMenuClose}
+                          sx={{
+                            ":hover": {
+                              color: "white",
+                              backgroundColor: 'rgba(0, 14, 79, 0.7)',
+                            },
+
+                            fontWeight: 'bold',
+                            color: isActive(item.href) ? 'inherit' : 'rgba(0, 14, 79, 0.88)'
+                          }}
+                        >
+                          {item.text}
+                        </MenuItem>
+                      </Link>
                     ))}
                   </Menu>
                 </Box>
@@ -161,7 +182,7 @@ const Header = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <Box>
-            <Typography align='center' variant="h6" sx={{ my: 2 }}>
+            <Typography align='center' variant="body1" sx={{ flexGrow: 1, color: "#72BF78" ,my: 2}}>
               <strong>Green Life Power Solution</strong>
             </Typography>
           </Box>
@@ -169,37 +190,48 @@ const Header = () => {
           <List>
             {menuItems.map((item, index) => (
               <React.Fragment key={index}>
-                <ListItem button component="a" href={item.href}
-                  sx={{
+                <Link href={item.href} passHref style={{ textDecoration: 'none' }}>
+                  <ListItem button sx={{
                     fontWeight: isActive(item.href) ? 'bold' : 'normal',
-                    color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
-                  }}
-                >
-                  <ListItemText primary={item.text} />
-                </ListItem>
+                    color: isActive(item.href) ? 'inherit' : 'rgba(0, 14, 79, 0.88)',
+                  }}>
+                    <ListItemText primary={item.text} sx={{ fontWeight: 'bold' }} />
+                  </ListItem>
+                </Link>
                 {index < menuItems.length - 1 && <Divider />}
               </React.Fragment>
             ))}
-            <ListItem button onClick={handleServicesMenuOpen}
-              sx={{
-                fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal',
-                color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
-              }}
-            >
-              <ListItemText primary="Services" />
+            <Divider />
+            {/* Services ListItem */}
+            <ListItem button onClick={handleServicesClick} sx={{
+              fontWeight: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'bold' : 'normal',
+              color: isActive('/solarwater') || isActive('/solarelectricalpower') ? 'inherit' : 'rgba(0, 14, 79, 0.88)',
+            }}>
+              <ListItemText primary="Services" sx={{ fontWeight: 'bold' }}/>
+              <IconButton>
+                {openServices ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+              </IconButton>
             </ListItem>
-            <List component="div" disablePadding>
-              {servicesItems.map((item, index) => (
-                <ListItem button component="a" href={item.href} key={index} sx={{ pl: 4 }}
-                  style={{
-                    fontWeight: isActive(item.href) ? 'bold' : 'normal',
-                    color: isActive(item.href) ? 'rgba(0, 14, 79, 0.88)' : 'inherit'
-                  }}
-                >
-                  <ListItemText primary={item.text} />
-                </ListItem>
-              ))}
-            </List>
+
+            {/* Collapse the servicesItems under "Services" */}
+            <Collapse in={openServices} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {servicesItems.map((item, index) => (
+                  <React.Fragment key={index}>
+                    <Link href={item.href} passHref style={{ textDecoration: 'none' }}>
+                      <ListItem button sx={{ pl: 4 }} style={{
+                        fontWeight: isActive(item.href) ? 'bold' : 'normal',
+                        color: isActive(item.href) ? 'inherit' : 'rgba(0, 14, 79, 0.88)',
+                      }}>
+                        <ListItemText primary={item.text} />
+                      </ListItem>
+                    </Link>
+                    {/* Divider after each service item */}
+                    <Divider />
+                  </React.Fragment>
+                ))}
+              </List>
+            </Collapse>
           </List>
         </Box>
       </Drawer>
