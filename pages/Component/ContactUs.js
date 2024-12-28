@@ -51,9 +51,9 @@ const ContactUs = () => {
     <>
       <Box
         mt={14}
-        sx={{
+        sx={{ 
           position: 'relative',
-          background: 'url("assets/project_1.jpeg") no-repeat center center',
+          background: 'url("/assets/project_1.jpeg") no-repeat center center',
           backgroundSize: 'cover',
           minHeight: { xs: "60vh", md: "40vh", sm: "40vh", lg: "40vh", xl: "40vh" },
           display: 'flex',

@@ -23,6 +23,7 @@ import Link from 'next/link'; // Import the Link component from Next.js
 import { Collapse } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import Image from 'next/image';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -112,7 +113,12 @@ const Header = () => {
                <Link href="/" passHref style={{ textDecoration: 'none' ,color: "#72BF78"}}> <b>Green Life Power Solution</b></Link>
               </Typography> */}
               <Box display={"flex"} alignItems="center">
-              <Link href="/" passHref style={{ textDecoration: 'none', color: "#72BF78" }}>   <img src='assets/grenlifelogo2.png' ></img></Link>
+              <Link href="/" passHref style={{ textDecoration: 'none', color: "#72BF78" }}>    <Image
+      src="/assets/grenlifelogo2.png"  // Correct the image path
+      alt="Green Life Logo"
+      width={200} // You can specify the width and height
+      height={50} // Specify the height as well
+    /></Link>
               {/* {
                 !isMobile && <Typography variant="h6" align='center' component="div" sx={{ flexGrow: 1, color: "#72BF78" }}>
                   <Link href="/" passHref style={{ textDecoration: 'none', color: "#72BF78" }}> <b>Green Life Power Solution</b></Link>

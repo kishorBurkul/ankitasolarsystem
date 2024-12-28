@@ -9,6 +9,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { keyframes } from '@mui/material';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const footerStyle = {
     position: 'fixed',
@@ -189,7 +190,14 @@ const Footer = () => {
                                 aria-label="WhatsApp"
                                 onClick={() => window.open('https://wa.me/+919623612594', '_blank')}
                             >
-                                <img src='assets/whatsapp.png' style={{ width: "40px", height: "40px" }} />
+                                <Image
+                                    src='/assets/whatsapp.png'
+                                    alt="whatsapp" 
+                                    width={40}                    // Specify width in pixels
+                                    height={40}                   // Specify height in pixels
+                                    style={{ borderRadius: "50%" }} // Add styles like border-radius if needed
+
+                                />
                             </IconButton >
                         </Box>
                     )}
@@ -200,7 +208,13 @@ const Footer = () => {
                                 aria-label="Call"
                                 onClick={() => window.open('tel:+919623612594', '_self')}
                             >
-                                <img src='assets/pause-call.png' style={{ width: "40px", height: "40px" }} />
+                                <Image
+                                    src="/assets/pause-call.png"  // Ensure the correct path
+                                    alt="Pause Call Icon"         // Always include an alt attribute for accessibility
+                                    width={40}                    // Specify width in pixels
+                                    height={40}                   // Specify height in pixels
+                                    style={{ borderRadius: "50%" }} // Add styles like border-radius if needed
+                                />
                             </IconButton>
                         </Box>
                     )}
